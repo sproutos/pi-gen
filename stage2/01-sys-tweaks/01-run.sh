@@ -53,4 +53,8 @@ on_chroot << EOF
 usermod --pass='*' root
 EOF
 
+on_chroot << EOF
+python3 -m pip install jupyterlab
+EOF
+
 rm -f "${ROOTFS_DIR}/etc/ssh/"ssh_host_*_key*
